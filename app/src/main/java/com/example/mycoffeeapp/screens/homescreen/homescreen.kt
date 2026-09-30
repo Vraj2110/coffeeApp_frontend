@@ -1,6 +1,5 @@
 package com.example.mycoffeeapp.screens.homescreen
-
-import android.R
+import com.example.mycoffeeapp.R
 import android.annotation.SuppressLint
 import android.text.style.IconMarginSpan
 import androidx.compose.foundation.Image
@@ -74,9 +73,13 @@ fun HomeScreen() {
                     tint = Color.White)
             }
 
-            Spacer(modifier = Modifier.height(40.dp))
+            Spacer(modifier = Modifier.height(30.dp))
             MySearchBar()
 
+            Spacer(modifier = Modifier.height(40.dp))
+
+            Image(painter = painterResource(R.drawable.banner_1),
+                contentDescription = "Home Banner")
         }
     }
     }
