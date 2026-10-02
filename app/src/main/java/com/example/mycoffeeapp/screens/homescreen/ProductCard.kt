@@ -42,7 +42,7 @@ fun ProductCard() {
 
     Card(
         modifier = Modifier
-            .width(250.dp)
+            .width(300.dp)
             .padding(8.dp),
         shape = RoundedCornerShape(16.dp)
     ) {
