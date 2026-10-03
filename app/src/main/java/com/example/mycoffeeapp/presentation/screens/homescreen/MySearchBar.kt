@@ -1,4 +1,4 @@
-package com.example.mycoffeeapp.screens.homescreen
+package com.example.mycoffeeapp.presentation.screens.homescreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -25,7 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mycoffeeapp.R
-import com.example.mycoffeeapp.ui.theme.LightBrown
+import com.example.mycoffeeapp.presentation.theme.LightBrown
 
 @Preview(showBackground = true)
 @Composable

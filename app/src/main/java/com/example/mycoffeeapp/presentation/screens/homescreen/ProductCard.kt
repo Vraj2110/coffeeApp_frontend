@@ -1,4 +1,4 @@
-package com.example.mycoffeeapp.screens.homescreen
+package com.example.mycoffeeapp.presentation.screens.homescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -20,7 +19,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MaterialTheme.typography
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,13 +30,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mycoffeeapp.R
-import com.example.mycoffeeapp.model.Product
-import com.example.mycoffeeapp.ui.theme.IvoryWhite
-import com.example.mycoffeeapp.ui.theme.LightBrown
-import com.example.mycoffeeapp.ui.theme.LightGray
+import com.example.mycoffeeapp.domain.model.Product
+import com.example.mycoffeeapp.presentation.theme.IvoryWhite
+import com.example.mycoffeeapp.presentation.theme.LightBrown
+import com.example.mycoffeeapp.presentation.theme.LightGray
 
 
 @Composable
@@ -97,7 +94,7 @@ fun ProductCard(
 
             Text(
                 text = product.name,
-                style = MaterialTheme.typography.titleMedium.copy(
+                style = typography.titleMedium.copy(
                     color = Color.Black,
                     fontWeight = FontWeight.SemiBold
                 )
@@ -107,7 +104,7 @@ fun ProductCard(
 
             Text(
                 text = product.description,
-                style = MaterialTheme.typography.titleMedium.copy(
+                style = typography.titleMedium.copy(
                     color = Color.Gray
                 ),
                 maxLines = 1,
