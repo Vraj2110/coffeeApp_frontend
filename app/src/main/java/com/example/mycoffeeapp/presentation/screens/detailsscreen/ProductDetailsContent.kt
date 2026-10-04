@@ -4,6 +4,7 @@ import android.graphics.drawable.Icon
 import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -29,6 +30,10 @@ import androidx.compose.ui.unit.sp
 import com.example.mycoffeeapp.domain.model.Product
 import com.example.mycoffeeapp.R
 import androidx.compose.material3.Icon
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import com.example.mycoffeeapp.presentation.theme.IvoryWhite
 import com.example.mycoffeeapp.presentation.theme.LightGray
 
@@ -94,6 +99,8 @@ fun ProductDetailsContent(product: Product, innerPadding: PaddingValues) {
         fontWeight = FontWeight.Bold,
         color = Color.Black
     )
+    Spacer(modifier = Modifier.height(12.dp))
+
     Text(
         text = product.description,
         fontSize = 16.sp,
@@ -109,4 +116,25 @@ fun ProductDetailsContent(product: Product, innerPadding: PaddingValues) {
         fontWeight = FontWeight.Bold,
         color = Color.Black
     )
+    Spacer(modifier = Modifier.height(12.dp))
+
+    var selectedSizeText by remember { mutableStateOf("M") }
+
+    Row(modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.spacedBy(30.dp)
+    ){
+        listOf("S","H","L").forEach { size ->
+
+            SelectSizeChip(
+
+                sizeText = size,
+                selected = selectedSizeText == size,
+                onClick = {selectedSizeText = size},
+                Modifier
+                    .weight(1f)
+                    .height(46.dp)
+            )
+
+        }
+    }
 }

@@ -9,7 +9,6 @@ import com.example.mycoffeeapp.R
 import com.example.mycoffeeapp.domain.model.Product
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@Preview(showBackground = true)
 @Composable
 fun DetailScreen() {
 
@@ -64,6 +63,7 @@ fun DetailScreen() {
             imageRes = R.drawable.coffee_4
         )
     )
+    val slectedProduct = products.find { it.id == 1 }
     Scaffold(
         topBar = {
             DetailScreenTopBar()
@@ -73,7 +73,13 @@ fun DetailScreen() {
         innerpadding ->
 
         LazyColumn {
-            item {  }
+            item {
+
+                ProductDetailsContent(
+                    slectedProduct,
+                    innerpadding
+                )
+            }
         }
     }
 }
