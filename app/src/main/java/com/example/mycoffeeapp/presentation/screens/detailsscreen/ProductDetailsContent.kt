@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -29,6 +30,7 @@ import com.example.mycoffeeapp.domain.model.Product
 import com.example.mycoffeeapp.R
 import androidx.compose.material3.Icon
 import com.example.mycoffeeapp.presentation.theme.IvoryWhite
+import com.example.mycoffeeapp.presentation.theme.LightGray
 
 
 @Composable
@@ -63,7 +65,10 @@ fun ProductDetailsContent(product: Product, innerPadding: PaddingValues) {
 
     Row() {
         Text(
-            text = "Ice/Hot"
+            text = "Ice/Hot",
+            fontSize = 16.sp,
+            color = LightGray,
+            fontWeight = FontWeight.Medium
         )
         Icon(
             painter = painterResource(R.drawable.default_bean),
@@ -77,4 +82,31 @@ fun ProductDetailsContent(product: Product, innerPadding: PaddingValues) {
                 .padding(6.dp)
         )
     }
+    Spacer(modifier = Modifier.height(16.dp))
+    HorizontalDivider(
+        color = LightGray.copy(alpha = 0.5f)
+    )
+    Spacer(modifier = Modifier.height(16.dp))
+
+    Text(
+        text = "Description",
+        fontSize = 24.sp,
+        fontWeight = FontWeight.Bold,
+        color = Color.Black
+    )
+    Text(
+        text = product.description,
+        fontSize = 16.sp,
+        color = LightGray,
+        fontWeight = FontWeight.Medium
+    )
+
+    Spacer(modifier = Modifier.height(24.dp))
+
+    Text(
+        text = "Size",
+        fontSize = 24.sp,
+        fontWeight = FontWeight.Bold,
+        color = Color.Black
+    )
 }
