@@ -28,13 +28,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.mycoffeeapp.domain.model.Product
 import com.example.mycoffeeapp.presentation.ui_components.MyBotoomNavBar
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
 
     val location = "Gurkul Circle, Vadodara"
 
@@ -114,7 +114,7 @@ fun HomeScreen() {
                     imageRes = R.drawable.coffee_4
                 )
             )
-            ProductsGrid(products = products) {
+            ProductsGrid(products = products,navController = navController) {
                 Text(
                     text = "Location",
                     color = Color.Gray,

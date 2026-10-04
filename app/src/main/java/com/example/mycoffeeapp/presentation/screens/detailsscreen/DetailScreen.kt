@@ -3,14 +3,17 @@ package com.example.mycoffeeapp.presentation.screens.detailsscreen
 import android.annotation.SuppressLint
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.example.mycoffeeapp.R
 import com.example.mycoffeeapp.domain.model.Product
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun DetailScreen() {
+fun DetailScreen(productId: Int,navController: NavController) {
 
     val products = listOf(
         Product(
@@ -63,10 +66,15 @@ fun DetailScreen() {
             imageRes = R.drawable.coffee_4
         )
     )
-    val slectedProduct = products.find { it.id == 1 }
+    val slectedProduct = products.find { it.id == productId }
+    if (slectedProduct == null){
+        Text("Product not found",
+            color = Color.Red)
+        return
+    }
     Scaffold(
         topBar = {
-            DetailScreenTopBar()
+            DetailScreenTopBar(navController)
         },
         bottomBar = {DetailScreenBottom()}
     ) {
