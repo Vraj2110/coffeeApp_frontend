@@ -1,5 +1,6 @@
 package com.example.mycoffeeapp.presentation.screens.detailsscreen
 
+import android.graphics.Paint
 import android.graphics.drawable.Icon
 import android.widget.Space
 import androidx.compose.foundation.Image
@@ -34,6 +35,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.text.style.TextAlign
 import com.example.mycoffeeapp.presentation.theme.IvoryWhite
 import com.example.mycoffeeapp.presentation.theme.LightGray
 
@@ -43,7 +46,7 @@ fun ProductDetailsContent(product: Product, innerPadding: PaddingValues) {
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .size(145.dp)
             .padding(16.dp)
             .padding(paddingValues = innerPadding)
     ) { }
@@ -53,6 +56,7 @@ fun ProductDetailsContent(product: Product, innerPadding: PaddingValues) {
         contentDescription = "Product Image",
         modifier = Modifier
             .fillMaxWidth()
+            .padding(15.dp)
             .height(250.dp)
             .clip(RoundedCornerShape(16.dp)),
         contentScale = ContentScale.Crop
@@ -62,18 +66,23 @@ fun ProductDetailsContent(product: Product, innerPadding: PaddingValues) {
 
     Text(
         text = product.name,
+        modifier = Modifier.padding(10.dp),
         fontSize = 24.sp,
         fontWeight = FontWeight.Bold,
-        color = Color.Black
+        color = Color.Black,
+
     )
     Spacer(modifier = Modifier.height(12.dp))
 
-    Row() {
+    Row(modifier = Modifier
+        .fillMaxWidth().padding(10.dp), horizontalArrangement = Arrangement.SpaceBetween)
+        {
         Text(
             text = "Ice/Hot",
             fontSize = 16.sp,
             color = LightGray,
-            fontWeight = FontWeight.Medium
+            fontWeight = FontWeight.Medium,
+            textAlign = TextAlign.Start,
         )
         Icon(
             painter = painterResource(R.drawable.default_bean),
