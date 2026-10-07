@@ -1,8 +1,5 @@
 package com.example.mycoffeeapp.presentation.screens.detailsscreen
 
-import android.graphics.Paint
-import android.graphics.drawable.Icon
-import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -17,133 +14,160 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.mycoffeeapp.domain.model.Product
 import com.example.mycoffeeapp.R
-import androidx.compose.material3.Icon
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.text.style.TextAlign
+import com.example.mycoffeeapp.domain.model.Product
+import com.example.mycoffeeapp.presentation.theme.CharcoalGray
 import com.example.mycoffeeapp.presentation.theme.IvoryWhite
 import com.example.mycoffeeapp.presentation.theme.LightGray
 
-
 @Composable
-fun ProductDetailsContent(product: Product, innerPadding: PaddingValues) {
-
-    Column(
-        modifier = Modifier
-            .size(145.dp)
-            .padding(16.dp)
-            .padding(paddingValues = innerPadding)
-    ) { }
-
-    Image(
-        painter = painterResource(product.imageRes),
-        contentDescription = "Product Image",
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(15.dp)
-            .height(250.dp)
-            .clip(RoundedCornerShape(16.dp)),
-        contentScale = ContentScale.Crop
-    )
-
-    Spacer(modifier = Modifier.height(12.dp))
-
-    Text(
-        text = product.name,
-        modifier = Modifier.padding(10.dp),
-        fontSize = 24.sp,
-        fontWeight = FontWeight.Bold,
-        color = Color.Black,
-
-    )
-    Spacer(modifier = Modifier.height(12.dp))
-
-    Row(modifier = Modifier
-        .fillMaxWidth().padding(10.dp), horizontalArrangement = Arrangement.SpaceBetween)
-        {
-        Text(
-            text = "Ice/Hot",
-            fontSize = 16.sp,
-            color = LightGray,
-            fontWeight = FontWeight.Medium,
-            textAlign = TextAlign.Start,
-        )
-        Icon(
-            painter = painterResource(R.drawable.default_bean),
-            contentDescription = "Bean",
-            modifier = Modifier
-                .background(
-                    color = IvoryWhite,
-                    shape = RoundedCornerShape(10.dp)
-                )
-                .size(36.dp)
-                .padding(6.dp)
-        )
-    }
-    Spacer(modifier = Modifier.height(16.dp))
-    HorizontalDivider(
-        color = LightGray.copy(alpha = 0.5f)
-    )
-    Spacer(modifier = Modifier.height(16.dp))
-
-    Text(
-        text = "Description",
-        fontSize = 24.sp,
-        fontWeight = FontWeight.Bold,
-        color = Color.Black
-    )
-    Spacer(modifier = Modifier.height(12.dp))
-
-    Text(
-        text = product.description,
-        fontSize = 16.sp,
-        color = LightGray,
-        fontWeight = FontWeight.Medium
-    )
-
-    Spacer(modifier = Modifier.height(24.dp))
-
-    Text(
-        text = "Size",
-        fontSize = 24.sp,
-        fontWeight = FontWeight.Bold,
-        color = Color.Black
-    )
-    Spacer(modifier = Modifier.height(12.dp))
+fun ProductDetailsContent(
+    product: Product,
+    innerPadding: PaddingValues
+) {
 
     var selectedSizeText by remember { mutableStateOf("M") }
 
-    Row(modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.spacedBy(30.dp)
-    ){
-        listOf("S","H","L").forEach { size ->
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(innerPadding)
+    ) {
 
-            SelectSizeChip(
+        // Product Image
+        Image(
+            painter = painterResource(product.imageRes),
+            contentDescription = "Product Image",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 15.dp)
+                .height(250.dp)
+                .clip(RoundedCornerShape(16.dp)),
+            contentScale = ContentScale.Crop
+        )
 
-                sizeText = size,
-                selected = selectedSizeText == size,
-                onClick = {selectedSizeText = size},
-                Modifier
-                    .weight(1f)
-                    .height(46.dp)
+        Spacer(modifier = Modifier.height(30.dp))
+
+        // Product Name
+        Text(
+            text = product.name,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black,
+            modifier = Modifier.padding(horizontal = 10.dp)
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        // Ice / Hot
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 10.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+
+            Text(
+                text = "Ice/Hot",
+                fontSize = 16.sp,
+                color = Color.Gray,
+                fontWeight = FontWeight.Medium
             )
 
+            Icon(
+                painter = painterResource(R.drawable.default_bean),
+                contentDescription = "Bean",
+                modifier = Modifier
+                    .background(
+                        color = IvoryWhite,
+                        shape = RoundedCornerShape(10.dp)
+                    )
+                    .size(36.dp)
+                    .padding(6.dp)
+            )
+        }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Divider
+        HorizontalDivider(
+            color = LightGray.copy(alpha = 0.5f)
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        // Description title
+        Text(
+            text = "Description",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black,
+            modifier = Modifier.padding(horizontal = 10.dp)
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        // Description
+        Text(
+            text = product.description,
+            fontSize = 16.sp,
+            color = Color.Gray,
+            fontWeight = FontWeight.Medium,
+            modifier = Modifier.padding(horizontal = 10.dp)
+        )
+
+        Spacer(modifier = Modifier.height(60.dp))
+
+        // Size title
+        Text(
+            text = "Size",
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Black,
+            modifier = Modifier.padding(horizontal = 10.dp)
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        // Size buttons
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 10.dp),
+            horizontalArrangement = Arrangement.spacedBy(20.dp)
+        ) {
+
+            listOf("S", "M", "L").forEach { size ->
+
+                SelectSizeChip(
+                    sizeText = size,
+                    selected = selectedSizeText == size,
+                    onClick = {
+                        selectedSizeText = size
+                    },
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(46.dp)
+                )
+            }
         }
     }
 }
