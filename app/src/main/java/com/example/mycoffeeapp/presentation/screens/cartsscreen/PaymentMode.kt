@@ -1,5 +1,6 @@
 package com.example.mycoffeeapp.presentation.screens.cartsscreen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -27,6 +28,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -34,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mycoffeeapp.R
 import com.example.mycoffeeapp.presentation.theme.LightBrown
+import com.example.mycoffeeapp.presentation.ui_components.AppMessageDialog
 
 @Composable
 fun PaymentMode(totalAmount: Double) {
@@ -44,11 +47,13 @@ fun PaymentMode(totalAmount: Double) {
 
     var paymentmodes = listOf("Online", "Cash")
 
+    var showCartDialog by remember { mutableStateOf(false) }
+
     Card(
         modifier = Modifier.fillMaxWidth()
     ) {
 
-        Column(modifier = Modifier.padding(16.dp)) {
+        Column(modifier = Modifier.padding(24.dp)) {
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -77,11 +82,19 @@ fun PaymentMode(totalAmount: Double) {
 
                         Spacer(modifier = Modifier.height(3.dp))
 
-                        Text(
-                            text = "$ $totalAmount",
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = LightBrown
-                        )
+                        if (selectedMode == "Online"){
+                            Text(
+                                text = "$ $totalAmount",
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = LightBrown
+                            )
+                        }else{
+                            Text(
+                                text = "$ ${totalAmount + 1.0}",
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = LightBrown)
+                        }
+
                     }
 
                 }
@@ -121,7 +134,13 @@ fun PaymentMode(totalAmount: Double) {
                                         tint = LightBrown,
                                         modifier = Modifier.size(24.dp)
                                     )
-                                }
+                                },
+                                modifier = Modifier
+                                    .padding(horizontal = 4.dp)
+                                    .background(
+                                        if (selectedMode == mode) LightBrown.copy(alpha = 0.15f)
+                                        else Color.Transparent
+                                    )
                             )
                         }
                     }
@@ -132,7 +151,7 @@ fun PaymentMode(totalAmount: Double) {
 
             Spacer(modifier = Modifier.height(16.dp))
             Button(
-                onClick = { }, modifier = Modifier
+                onClick = { showCartDialog = true }, modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp),
                 shape = RoundedCornerShape(10.dp),
@@ -144,6 +163,12 @@ fun PaymentMode(totalAmount: Double) {
                 Text(
                     text = "Place Order",
                     fontSize = 18.sp
+                )
+                AppMessageDialog(
+                    show = showCartDialog,
+                    "Order Placed",
+                    message ="Order is place succesfully and will be delivered soon.",
+                    onDismiss = {showCartDialog = false}
                 )
             }
         }

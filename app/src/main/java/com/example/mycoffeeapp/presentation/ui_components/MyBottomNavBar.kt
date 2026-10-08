@@ -1,5 +1,6 @@
 package com.example.mycoffeeapp.presentation.ui_components
 
+import android.net.http.SslCertificate.saveState
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
@@ -14,19 +15,21 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.mycoffeeapp.R
+import com.example.mycoffeeapp.presentation.navigation.Routes
 import com.example.mycoffeeapp.presentation.theme.LightBrown
 
-@Preview
+
 @Composable
-fun MyBotoomNavBar() {
+fun MyBotoomNavBar(navController: NavController, routes: Routes) {
 
     //Bottomnav items
     val navItems = listOf(
-        NavItem("Home", R.drawable.regular_outline_home),
-        NavItem("Cart", R.drawable.regular_outline_bag),
-        NavItem("Favourites", R.drawable.regular_outline_heart),
-        NavItem("Profile", R.drawable.outline_account_circle_24)
+        NavItem("Home", R.drawable.regular_outline_home, Routes.HomeScreen),
+        NavItem("Cart", R.drawable.regular_outline_bag, Routes.Cartscreen),
+        NavItem("Favourites", R.drawable.regular_outline_heart, Routes.Favoritescreen),
+        NavItem("Profile", R.drawable.outline_account_circle_24, Routes.Profilescreen)
     )
 
 
@@ -45,8 +48,17 @@ fun MyBotoomNavBar() {
                 },
                 label = { Text(item.title) },
                 modifier = Modifier.size(30.dp),
-                onClick = { },
-                selected = true,
+                //handling bottom navbar
+                onClick = {
+                    navController.navigate(item.routes) {
+                        popUpTo(navController.graph.startDestinationId) {
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                          },
+                selected = item.routes == routes,
                 alwaysShowLabel = false,
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = LightBrown,
@@ -62,5 +74,6 @@ fun MyBotoomNavBar() {
 
 data class NavItem(
     val title: String,
-    val icon: Int
+    val icon: Int,
+    val routes: Routes
 )

@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.mycoffeeapp.domain.model.Product
+import com.example.mycoffeeapp.presentation.navigation.Routes
 import com.example.mycoffeeapp.presentation.ui_components.MyBotoomNavBar
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -39,7 +40,7 @@ fun HomeScreen(navController: NavController) {
     val location = "Gurkul Circle, Vadodara"
 
     Scaffold(
-        bottomBar = { MyBotoomNavBar() }
+        bottomBar = { MyBotoomNavBar(navController, Routes.HomeScreen) }
     ) { innerPadding ->
         Box(
             modifier = Modifier

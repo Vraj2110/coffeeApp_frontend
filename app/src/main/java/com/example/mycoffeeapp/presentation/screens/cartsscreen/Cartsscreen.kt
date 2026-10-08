@@ -35,15 +35,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.mycoffeeapp.R
 import com.example.mycoffeeapp.domain.model.Product
 import com.example.mycoffeeapp.presentation.navigation.Routes
 import com.example.mycoffeeapp.presentation.theme.LightBrown
+import com.example.mycoffeeapp.presentation.ui_components.MyBotoomNavBar
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@Preview
 @Composable
-fun Cartsscreen() {
+fun Cartsscreen(navController: NavController) {
     val cartproducts = listOf(
         Product(
             id = 1,
@@ -74,12 +75,13 @@ fun Cartsscreen() {
 
 
     Scaffold(
-        topBar = { CartScreenTopBar() }
+        topBar = { CartScreenTopBar(navController) },
+        bottomBar = { MyBotoomNavBar(navController = navController, Routes.Cartscreen) }
     ) { innerpadding ->
 
         LazyColumn(
             modifier = Modifier
-                .padding(16.dp)
+                .padding(start = 16.dp, end = 16.dp)
                 .padding(innerpadding)
         ) {
 

@@ -8,7 +8,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.example.mycoffeeapp.presentation.screens.cartsscreen.Cartsscreen
 import com.example.mycoffeeapp.presentation.screens.detailsscreen.DetailScreen
+import com.example.mycoffeeapp.presentation.screens.favouritescreen.FavoriteScreen
 import com.example.mycoffeeapp.presentation.screens.homescreen.HomeScreen
 import com.example.mycoffeeapp.presentation.screens.welcomescreen.WelcomeScreen
 import kotlinx.serialization.Serializable
@@ -31,6 +33,10 @@ fun NavGraph() {
             val args = backStackEntry.toRoute<Routes.Detailed>()
             DetailScreen(productId = args.productId,navController)
         }
+
+        composable<Routes.Cartscreen> { Cartsscreen(navController) }
+
+        composable<Routes.Favoritescreen> { FavoriteScreen(navController) }
 
     }
 }
