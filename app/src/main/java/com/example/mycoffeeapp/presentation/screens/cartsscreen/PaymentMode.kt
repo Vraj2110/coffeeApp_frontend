@@ -1,5 +1,6 @@
 package com.example.mycoffeeapp.presentation.screens.cartsscreen
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,10 +15,16 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -30,6 +37,12 @@ import com.example.mycoffeeapp.presentation.theme.LightBrown
 
 @Composable
 fun PaymentMode(totalAmount: Double) {
+
+    var expanded by remember { mutableStateOf(false) }
+
+    var selectedMode by remember { mutableStateOf("Online") }
+
+    var paymentmodes = listOf("Online", "Cash")
 
     Card(
         modifier = Modifier.fillMaxWidth()
@@ -46,7 +59,7 @@ fun PaymentMode(totalAmount: Double) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
 
                     Icon(
-                        painter = painterResource(R.drawable.mobile_banking),
+                        painter = painterResource(id = if (selectedMode == "Online") R.drawable.mobile_banking else R.drawable.wallet),
                         contentDescription = "Payment Mode",
                         modifier = Modifier.size(30.dp),
                         tint = LightBrown
@@ -56,7 +69,7 @@ fun PaymentMode(totalAmount: Double) {
 
                     Column() {
                         Text(
-                            text = "Online",
+                            text = selectedMode,
                             style = MaterialTheme.typography.bodyLarge.copy(
                                 fontWeight = FontWeight.SemiBold
                             )
@@ -77,9 +90,44 @@ fun PaymentMode(totalAmount: Double) {
                     Icon(
                         painter = painterResource(R.drawable.regular_outline_arrow_down),
                         contentDescription = "drop down icon",
-                        modifier = Modifier.size(20.dp)
+                        modifier = Modifier
+                            .size(23.dp)
+                            .clickable { expanded = true }
                     )
+
+                    DropdownMenu(
+                        expanded =
+                            expanded,
+                        onDismissRequest = { expanded = false }
+                    ) {
+                        paymentmodes.forEach { mode ->
+                            DropdownMenuItem(
+                                text = {
+                                    Text(
+                                        text = mode,
+                                        style = MaterialTheme.typography.bodyLarge
+                                    )
+                                },
+                                onClick = {
+                                    selectedMode = mode
+                                    expanded = false
+                                },
+                                leadingIcon = {
+                                    Icon(
+                                        painter = painterResource(
+                                            if (mode == "Online") R.drawable.mobile_banking
+                                            else R.drawable.wallet
+                                        ), contentDescription = null,
+                                        tint = LightBrown,
+                                        modifier = Modifier.size(24.dp)
+                                    )
+                                }
+                            )
+                        }
+                    }
                 }
+
+
             }
 
             Spacer(modifier = Modifier.height(16.dp))

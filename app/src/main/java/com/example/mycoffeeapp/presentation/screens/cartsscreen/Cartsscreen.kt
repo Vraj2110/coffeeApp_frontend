@@ -90,7 +90,8 @@ fun Cartsscreen() {
                         text = "Deliver",
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold,
-                        color = LightBrown
+                        color = LightBrown,
+                        modifier = Modifier.padding(start = 2.dp)
                     )
                 }
 
