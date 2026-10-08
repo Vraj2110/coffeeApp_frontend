@@ -21,25 +21,36 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mycoffeeapp.R
+import com.example.mycoffeeapp.domain.model.Product
 import com.example.mycoffeeapp.presentation.theme.LightBrown
+import com.example.mycoffeeapp.presentation.theme.LightGray
 
-@Preview
 @Composable
-fun CartItemCard() {
+fun CartItemCard(product: Product) {
+
+    var quantity by remember { mutableStateOf(1) }
 
     Card(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().padding(6.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
+            containerColor = LightGray
+        ),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 4.dp
         )
     ) {
 
@@ -49,7 +60,7 @@ fun CartItemCard() {
                 .padding(12.dp)
         ) {
             Image(
-                painter = painterResource(R.drawable.coffee_3),
+                painter = painterResource(product.imageRes),
                 contentDescription = "Coffee Image",
                 modifier = Modifier
                     .size(70.dp)
@@ -62,27 +73,28 @@ fun CartItemCard() {
                     .padding(start = 12.dp)
             ) {
                 Text(
-                    "Coffe Name",
+                    product.name,
                     style = MaterialTheme.typography.bodyLarge.copy(
                         fontWeight = FontWeight.SemiBold
                     )
                 )
 
                 Text(
-                    "Coffee Description",
+                    product.description,
                     color = Color.DarkGray
                 )
             }
 
-            Row(
+            Row(modifier = Modifier.align(Alignment.CenterVertically),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 IconButton(
-                    onClick = {},
+                    onClick = {quantity--},
+                    enabled = quantity > 1,
                     modifier = Modifier
                         .background(
-                            color = LightBrown.copy(alpha = 0.2f),
+                            color = LightBrown.copy(alpha = 0.1f),
                             shape = CircleShape
                         )
                         .size(24.dp)
@@ -94,13 +106,14 @@ fun CartItemCard() {
                     )
                 }
 
-                Text(text = "1")
+                Text(text = quantity.toString(),
+                    style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.SemiBold))
 
                 IconButton(
-                    onClick = {},
+                    onClick = {quantity++},
                     modifier = Modifier
                         .background(
-                            color = LightBrown.copy(alpha = 0.2f),
+                            color = LightBrown.copy(alpha = 0.1f),
                             shape = CircleShape
                         )
                         .size(24.dp)
@@ -114,5 +127,4 @@ fun CartItemCard() {
             }
         }
     }
-
 }
