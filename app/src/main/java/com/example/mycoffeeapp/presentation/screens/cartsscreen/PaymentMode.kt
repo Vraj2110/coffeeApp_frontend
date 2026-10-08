@@ -29,7 +29,7 @@ import com.example.mycoffeeapp.R
 import com.example.mycoffeeapp.presentation.theme.LightBrown
 
 @Composable
-fun PaymentMode(totalAmount : Double) {
+fun PaymentMode(totalAmount: Double) {
 
     Card(
         modifier = Modifier.fillMaxWidth()
@@ -37,9 +37,11 @@ fun PaymentMode(totalAmount : Double) {
 
         Column(modifier = Modifier.padding(16.dp)) {
 
-            Row(modifier = Modifier.fillMaxWidth(),
+            Row(
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically) {
+                verticalAlignment = Alignment.CenterVertically
+            ) {
 
                 Row(verticalAlignment = Alignment.CenterVertically) {
 
@@ -62,30 +64,39 @@ fun PaymentMode(totalAmount : Double) {
 
                         Spacer(modifier = Modifier.height(3.dp))
 
-                        Text(text = "$ $totalAmount",
+                        Text(
+                            text = "$ $totalAmount",
                             style = MaterialTheme.typography.bodyLarge,
                             color = LightBrown
                         )
                     }
 
                 }
-                Box{
+                Box {
 
-                    Icon(painter = painterResource(R.drawable.regular_outline_arrow_down),
+                    Icon(
+                        painter = painterResource(R.drawable.regular_outline_arrow_down),
                         contentDescription = "drop down icon",
-                        modifier = Modifier.size(20.dp))
+                        modifier = Modifier.size(20.dp)
+                    )
                 }
             }
 
             Spacer(modifier = Modifier.height(16.dp))
-            Button(onClick = { }, modifier = Modifier.fillMaxWidth().height(50.dp),
+            Button(
+                onClick = { }, modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
                 shape = RoundedCornerShape(10.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = LightBrown
-                )) {
+                )
+            ) {
 
-                Text(text = "Place Order",
-                    fontSize = 18.sp)
+                Text(
+                    text = "Place Order",
+                    fontSize = 18.sp
+                )
             }
         }
     }
