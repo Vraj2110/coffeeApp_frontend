@@ -14,10 +14,10 @@ A modern, sleek, and minimalist coffee ordering app UI built from scratch using 
 
 | Welcome Screen | Home Screen | Product Details |
 | :---: | :---: | :---: |
-| !(<img width="1280" height="2856" alt="Screenshot_20261009_135218" src="https://github.com/user-attachments/assets/d0a244ba-4e24-4fb2-856b-7c939df8e72b" />
-) | (<img width="1280" height="2856" alt="Screenshot_20261009_135305" src="https://github.com/user-attachments/assets/354a3a78-180f-4e64-81f5-c3fd31ae0bf9" />
-) | (<img width="1280" height="2856" alt="Screenshot_20261009_135318" src="https://github.com/user-attachments/assets/575d0f8e-bc04-45d7-81a5-08cab611303a" />
-) |
+| (<img width="1280" height="2856" alt="Screenshot_20261009_135218" src="https://github.com/user-attachments/assets/d0a244ba-4e24-4fb2-856b-7c939df8e72b" />
+ | (<img width="1280" height="2856" alt="Screenshot_20261009_135305" src="https://github.com/user-attachments/assets/354a3a78-180f-4e64-81f5-c3fd31ae0bf9" />
+ | (<img width="1280" height="2856" alt="Screenshot_20261009_135318" src="https://github.com/user-attachments/assets/575d0f8e-bc04-45d7-81a5-08cab611303a" />
+ |
 
 | Cart & Checkout | Favourites | Profile Screen |
 | :---: | :---: | :---: |
