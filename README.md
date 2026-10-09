@@ -12,25 +12,13 @@ A modern, sleek, and minimalist coffee ordering app UI built from scratch using 
 
 ## 📱 Screenshots
 
-<p align="center">
-  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135218" src="https://github.com/user-attachments/assets/8b251621-856e-4534-992b-502387c54d36" />
-" width="30%" alt="Screenshot" /> &nbsp; &nbsp;
-  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135305" src="https://github.com/user-attachments/assets/2224a0db-38e7-4f48-965b-2576980735bd" />
-" width="30%" alt="Screenshot" /> &nbsp; &nbsp;
-  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135318" src="https://github.com/user-attachments/assets/c7158e87-09b9-445c-ad31-a1d86a8f93f7" />
-" width="30%" alt="Screenshot" />
-</p>
+<img width="1280" height="2856" alt="Screenshot_20261009_135218" src="https://github.com/user-attachments/assets/ceb42440-1e72-41d1-bd5a-477271bbe34a" />
+<img width="1280" height="2856" alt="Screenshot_20261009_135305" src="https://github.com/user-attachments/assets/d984dff3-4660-4e38-9ade-56ab0f7577af" />
+<img width="1280" height="2856" alt="Screenshot_20261009_135318" src="https://github.com/user-attachments/assets/e75f110d-da88-4e2b-a087-a3542513ea35" />
+<img width="1280" height="2856" alt="Screenshot_20261009_135353" src="https://github.com/user-attachments/assets/dbf5151c-0156-4fcc-ad17-03caffec184b" />
+<img width="1280" height="2856" alt="Screenshot_20261009_135405" src="https://github.com/user-attachments/assets/8f655b39-f47f-4a5d-9f8a-7dd798bd6b9b" />
+<img width="1280" height="2856" alt="Screenshot_20261009_135414" src="https://github.com/user-attachments/assets/436f8e72-35c0-473e-9131-a67c9f2b0814" />
 
-<br>
-
-<p align="center">
-  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135353" src="https://github.com/user-attachments/assets/ef9bef03-e99b-4c25-8a86-37e4c2e88fb3" />
-" width="30%" alt="Screenshot" /> &nbsp; &nbsp;
-  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135405" src="https://github.com/user-attachments/assets/72c200de-3179-416d-979b-ac2aa5013b6c" />
-" width="30%" alt="Screenshot" /> &nbsp; &nbsp;
-  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135414" src="https://github.com/user-attachments/assets/29604fec-4924-47e4-a08e-99ff75035719" />
-" width="30%" alt="Screenshot" />
-</p>
 
 ---
 
