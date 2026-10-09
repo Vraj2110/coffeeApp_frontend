@@ -2,8 +2,6 @@ package com.example.mycoffeeapp.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavController
-import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -12,8 +10,8 @@ import com.example.mycoffeeapp.presentation.screens.cartsscreen.Cartsscreen
 import com.example.mycoffeeapp.presentation.screens.detailsscreen.DetailScreen
 import com.example.mycoffeeapp.presentation.screens.favouritescreen.FavoriteScreen
 import com.example.mycoffeeapp.presentation.screens.homescreen.HomeScreen
+import com.example.mycoffeeapp.presentation.screens.profilescreen.ProfileScreen
 import com.example.mycoffeeapp.presentation.screens.welcomescreen.WelcomeScreen
-import kotlinx.serialization.Serializable
 
 @Preview
 @Composable
@@ -37,6 +35,8 @@ fun NavGraph() {
         composable<Routes.Cartscreen> { Cartsscreen(navController) }
 
         composable<Routes.Favoritescreen> { FavoriteScreen(navController) }
+
+        composable<Routes.Profilescreen> { ProfileScreen(navController) }
 
     }
 }
