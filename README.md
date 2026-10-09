@@ -14,11 +14,18 @@ A modern, sleek, and minimalist coffee ordering app UI built from scratch using 
 
 | Welcome Screen | Home Screen | Product Details |
 | :---: | :---: | :---: |
-| ![Welcome](Screenshot_20261009_135218.jpg) | ![Home](Screenshot_20261009_135305.jpg) | ![Details](Screenshot_20261009_135318.jpg) |
+| ![Welcome](<img width="1280" height="2856" alt="Screenshot_20261009_135218" src="https://github.com/user-attachments/assets/d0a244ba-4e24-4fb2-856b-7c939df8e72b" />
+) | ![Home](<img width="1280" height="2856" alt="Screenshot_20261009_135305" src="https://github.com/user-attachments/assets/354a3a78-180f-4e64-81f5-c3fd31ae0bf9" />
+) | ![Details](<img width="1280" height="2856" alt="Screenshot_20261009_135318" src="https://github.com/user-attachments/assets/575d0f8e-bc04-45d7-81a5-08cab611303a" />
+) |
 
 | Cart & Checkout | Favourites | Profile Screen |
 | :---: | :---: | :---: |
-| ![Cart](Screenshot_20261009_135353.jpg) | ![Favourites](Screenshot_20261009_135405.jpg) | ![Profile](Screenshot_20261009_135414.png) |
+| ![Cart](<img width="1280" height="2856" alt="Screenshot_20261009_135353" src="https://github.com/user-attachments/assets/51c38a26-b143-4979-9344-95541c6122bb" />
+ />
+) | ![Favourites](<img width="1280" height="2856" alt="Screenshot_20261009_135405" src="https://github.com/user-attachments/assets/39466810-5e9d-48e0-a726-f937cab468ce" />
+) | ![Profile](<img width="1280" height="2856" alt="Screenshot_20261009_135414" src="https://github.com/user-attachments/assets/9a89cb58-bf48-4604-8dc1-5d871125d9cb" />
+) |
 
 ---
 
