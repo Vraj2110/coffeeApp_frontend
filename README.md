@@ -10,29 +10,34 @@ A modern, sleek, and minimalist coffee ordering app UI built from scratch using 
 
 ---
 
-## 📱 App Screenshots
+## 📱 Screenshots
 
-| Welcome Screen | Home Screen | Product Details |
-| :---: | :---: | :---: |
-| (<img width="1280" height="2856" alt="Screenshot_20261009_135218" src="https://github.com/user-attachments/assets/d0a244ba-4e24-4fb2-856b-7c939df8e72b" />
- | (<img width="1280" height="2856" alt="Screenshot_20261009_135305" src="https://github.com/user-attachments/assets/354a3a78-180f-4e64-81f5-c3fd31ae0bf9" />
- | (<img width="1280" height="2856" alt="Screenshot_20261009_135318" src="https://github.com/user-attachments/assets/575d0f8e-bc04-45d7-81a5-08cab611303a" />
- |
+<p align="center">
+  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135218" src="https://github.com/user-attachments/assets/8b251621-856e-4534-992b-502387c54d36" />
+" width="30%" alt="Screenshot" /> &nbsp; &nbsp;
+  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135305" src="https://github.com/user-attachments/assets/2224a0db-38e7-4f48-965b-2576980735bd" />
+" width="30%" alt="Screenshot" /> &nbsp; &nbsp;
+  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135318" src="https://github.com/user-attachments/assets/c7158e87-09b9-445c-ad31-a1d86a8f93f7" />
+" width="30%" alt="Screenshot" />
+</p>
 
-| Cart & Checkout | Favourites | Profile Screen |
-| :---: | :---: | :---: |
-| (<img width="1280" height="2856" alt="Screenshot_20261009_135353" src="https://github.com/user-attachments/assets/51c38a26-b143-4979-9344-95541c6122bb" />
- />
-) |(<img width="1280" height="2856" alt="Screenshot_20261009_135405" src="https://github.com/user-attachments/assets/39466810-5e9d-48e0-a726-f937cab468ce" />
-) |(<img width="1280" height="2856" alt="Screenshot_20261009_135414" src="https://github.com/user-attachments/assets/9a89cb58-bf48-4604-8dc1-5d871125d9cb" />
-) |
+<br>
+
+<p align="center">
+  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135353" src="https://github.com/user-attachments/assets/ef9bef03-e99b-4c25-8a86-37e4c2e88fb3" />
+" width="30%" alt="Screenshot" /> &nbsp; &nbsp;
+  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135405" src="https://github.com/user-attachments/assets/72c200de-3179-416d-979b-ac2aa5013b6c" />
+" width="30%" alt="Screenshot" /> &nbsp; &nbsp;
+  <img src="<img width="1280" height="2856" alt="Screenshot_20261009_135414" src="https://github.com/user-attachments/assets/29604fec-4924-47e4-a08e-99ff75035719" />
+" width="30%" alt="Screenshot" />
+</p>
 
 ---
 
 ## ✨ Features
 
 * **☕ Welcome / Splash UI:** An immersive landing screen inviting users with a rich coffee aesthetic and a smooth "Get Started" CTA[cite: 1].
-* **📍 Interactive Home Screen:** Features a dynamic location selector (e.g., Gurkul Circle, Vadodara), a search bar, promotional BOGO banners, and horizontal category filters (All Coffees, Macchiato, Latte, Americano)[cite: 2].
+* **📍 Interactive Home Screen:** Features a dynamic location selector (e.g., Gurkul Circle, Vadodara), a search bar, promotional BOGO banners, and horizontal category filters[cite: 2].
 * **🛒 Product Catalog & Details:** Beautiful cards displaying coffee items with descriptions, ratings, and pricing, leading into an interactive size selector (`S`, `M`, `L`) and detail views[cite: 2, 3].
 * **📦 Cart & Order Summary:** Full shopping cart management allowing item quantity adjustments, delivery fee breakdowns, payment method selection, and order placement[cite: 4].
 * **❤️ Favourites Section:** A dedicated wishlist tab where users can quickly manage or delete their favorite brews[cite: 5].
