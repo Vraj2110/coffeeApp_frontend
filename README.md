@@ -1,44 +1,51 @@
-<div align="center">
-☕ BrewHaven - Jetpack Compose Coffee App UI
-> *Fall in Love with Coffee in Blissful Delight!*
-![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-Android-blue?style=for-the-badge&logo=android&logoColor=white&color=4285F4)
-![Kotlin](https://img.shields.io/badge/Kotlin-1.9%2B-orange?style=for-the-badge&logo=kotlin&logoColor=white)
-[![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)]()
-A modern, sleek, and minimalist coffee ordering app UI built from scratch using Jetpack Compose.
-</div>
----
-📱 App Screenshots
-<div align="center">
-Welcome Screen	Home Screen	Product Details
-![Welcome](Screenshot_20261009_135218.jpg)	![Home](Screenshot_20261009_135305.jpg)	![Details](Screenshot_20261009_135318.jpg)
+# ☕ BrewHaven - Jetpack Compose Coffee App UI
 
-Cart & Checkout	Favourites	Profile Screen
-![Cart](Screenshot_20261009_135353.jpg)	![Favourites](Screenshot_20261009_135405.jpg)	![Profile](Screenshot_20261009_135414.png)
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/Jetpack%20Compose-Android-blue?style=for-the-badge&logo=android&logoColor=white&color=4285F4" alt="Jetpack Compose">
+  <img src="https://img.shields.io/badge/Kotlin-1.9%2B-orange?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin">
+  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" alt="Status">
+</p>
+
+A modern, sleek, and minimalist coffee ordering app UI built from scratch using **Jetpack Compose**. This project serves as my introduction to modern Android UI development, exploring declarative layouts, custom styling, and smooth screen navigation.
+
 ---
-✨ Features
-🚀 Welcome / Splash UI: An immersive landing screen inviting users with a rich coffee aesthetic and a smooth "Get Started" CTA.
-🏠 Interactive Home Screen:
-Dynamic location selector (e.g., Gurkul Circle, Vadodara).
-Search bar with filter options.
-Promotional banner ("Buy one get one FREE").
-Categorized coffee selection tabs (All Coffees, Macchiato, Latte, Americano).
-Product grid cards with quick-add actions and favourite toggles.
-🔍 Product Detail View: Clean layout showing high-resolution imagery, preparation details (Ice/Hot), description, and customizable size options (S, M, L).
-🛒 Cart & Checkout: Review selected items, adjust quantities, calculate dynamic pricing with delivery fees, and view payment summary.
-❤️ Favourites: Dedicated tab to manage and quickly access saved coffee preferences.
-👤 User Profile: Personalized profile view displaying user information, saved addresses, and quick app settings.
-🧭 Bottom Navigation Bar: Seamless transition between Home, Cart, Favourites, and Profile.
+
+## 📱 App Screenshots
+
+| Welcome Screen | Home Screen | Product Details |
+| :---: | :---: | :---: |
+| ![Welcome](Screenshot_20261009_135218.jpg) | ![Home](Screenshot_20261009_135305.jpg) | ![Details](Screenshot_20261009_135318.jpg) |
+
+| Cart & Checkout | Favourites | Profile Screen |
+| :---: | :---: | :---: |
+| ![Cart](Screenshot_20261009_135353.jpg) | ![Favourites](Screenshot_20261009_135405.jpg) | ![Profile](Screenshot_20261009_135414.png) |
+
 ---
-🛠️ Built With
-Jetpack Compose - Android’s modern toolkit for building native UI.
-Kotlin - First-class language for Android development.
-Material 3 - Modern design system components and theming.
+
+## ✨ Features
+
+* **☕ Welcome / Splash UI:** An immersive landing screen inviting users with a rich coffee aesthetic and a smooth "Get Started" CTA[cite: 1].
+* **📍 Interactive Home Screen:** Features a dynamic location selector (e.g., Gurkul Circle, Vadodara), a search bar, promotional BOGO banners, and horizontal category filters (All Coffees, Macchiato, Latte, Americano)[cite: 2].
+* **🛒 Product Catalog & Details:** Beautiful cards displaying coffee items with descriptions, ratings, and pricing, leading into an interactive size selector (`S`, `M`, `L`) and detail views[cite: 2, 3].
+* **📦 Cart & Order Summary:** Full shopping cart management allowing item quantity adjustments, delivery fee breakdowns, payment method selection, and order placement[cite: 4].
+* **❤️ Favourites Section:** A dedicated wishlist tab where users can quickly manage or delete their favorite brews[cite: 5].
+* **👤 User Profile:** Clean account management view showing user info, delivery addresses, settings, and theme toggling options[cite: 6].
+
 ---
-👨‍💻 Author
-Vraj Desai
-Email: desaivraj18@gmail.com
-Location: Gurkul Circle, Vadodara
+
+## 🛠️ Tech Stack & Concepts
+
+* **UI Framework:** [Jetpack Compose](https://developer.android.com/jetpack/compose) (Declarative UI)
+* **Language:** Kotlin
+* **Architecture:** Stateless and Stateful Composables
+* **Design Pattern:** Material Design principles with custom dark/light thematic color palettes
+
 ---
-📄 License
-This project is created for learning and educational purposes as part of a Jetpack Compose tutorial journey. Feel free to use and adapt the code for your own projects!
+
+## 🚀 Getting Started
+
+To run this project locally, make sure you have the latest version of Android Studio installed:
+
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/your-repo-name.git](https://github.com/YOUR_USERNAME/your-repo-name.git)
